@@ -49,24 +49,27 @@ function Counter({ target, suffix = '' }) {
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
 
+const ContrastIcon = () => <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20a10 10 0 1 0 0-20z" fill="currentColor"/><circle cx="12" cy="12" r="10"/></svg>;
+const ChatIcon = () => <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>;
+const UserIcon = () => <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>;
+
 /* ══════════════════════════════════════════════
-   UTILITY BAR  (top gray strip)
+   UTILITY BAR  (top white strip)
    ══════════════════════════════════════════════ */
 function UtilityBar() {
   return (
-    <div className="hidden md:block bg-[#FAFAFA] border-b border-gray-200 text-xs text-dtv-body">
-      <div className="max-w-[1200px] mx-auto px-6 h-9 flex items-center justify-between">
-        <div className="flex items-center gap-5">
-          <button className="flex items-center gap-1 hover:text-dtv-dark transition-colors"><Globe /> Indonesia <ChevronDown /></button>
-          <span className="text-gray-300">|</span>
-          <button className="hover:text-dtv-dark transition-colors">🔆 High Contrast</button>
-          <button className="hover:text-dtv-dark transition-colors">💬 Customer Support</button>
-          <button className="hover:text-dtv-dark transition-colors">📞 Contact Sales</button>
+    <div className="hidden md:block bg-white text-[13px] font-medium text-dtv-dark pt-3 pb-1">
+      <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+        <div className="flex items-center gap-6">
+          <button className="flex items-center gap-1.5 hover:text-dtv-orange transition-colors"><Globe /> English <ChevronDown /></button>
+          <button className="flex items-center gap-1.5 hover:text-dtv-orange transition-colors"><ContrastIcon /> High Contrast</button>
+          <button className="flex items-center gap-1.5 hover:text-dtv-orange transition-colors"><ChatIcon /> Customer Support</button>
+          <button className="flex items-center gap-1.5 hover:text-dtv-orange transition-colors"><UserIcon /> Contact Sales</button>
         </div>
-        <div className="flex items-center gap-5">
-          <button className="hover:text-dtv-dark transition-colors flex items-center gap-1"><SearchIcon /></button>
-          <a href="#" className="hover:text-dtv-dark transition-colors">Log In</a>
-          <button className="flex items-center gap-1 hover:text-dtv-dark transition-colors">About <ChevronDown /></button>
+        <div className="flex items-center gap-6">
+          <button className="hover:text-dtv-orange transition-colors"><SearchIcon /></button>
+          <a href="#" className="hover:text-dtv-orange transition-colors">Log in</a>
+          <button className="flex items-center gap-1 hover:text-dtv-orange transition-colors">About <ChevronDown /></button>
         </div>
       </div>
     </div>
@@ -87,8 +90,8 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
-      <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
+    <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md border-b-0' : 'shadow-none border-b border-gray-200'}`}>
+      <div className={`max-w-[1200px] mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-[88px]'}`}>
         {/* logo and links */}
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'gap-4' : 'gap-8'}`}>
           <a href="#" className="flex items-center gap-0.5 overflow-hidden">
@@ -105,7 +108,7 @@ function Navbar() {
           {/* links */}
           <div className="hidden lg:flex items-center gap-1">
             {['Products', 'Solutions', 'Pricing', 'Resources'].map((l) => (
-              <a key={l} href={`#${l.toLowerCase()}`} className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-dtv-dark hover:text-dtv-orange transition-colors rounded-md hover:bg-gray-50">
+              <a key={l} href={`#${l.toLowerCase()}`} className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-dtv-dark hover:text-dtv-orange transition-colors rounded-md hover:bg-gray-50">
                 {l} {l !== 'Pricing' && <ChevronDown />}
               </a>
             ))}
@@ -113,8 +116,8 @@ function Navbar() {
         </div>
         {/* right */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#" className="btn-orange text-sm">Get a demo</a>
-          <a href="#" className="btn-outline-orange text-sm">Get started free</a>
+          <a href="#" className="btn-orange text-[15px]">Get a demo</a>
+          <a href="#" className="btn-outline-orange text-[15px]">Get started free</a>
         </div>
         {/* mobile */}
         <button className="lg:hidden text-dtv-dark" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
@@ -125,11 +128,11 @@ function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3 animate-fade-in">
           {['Products', 'Solutions', 'Pricing', 'Resources'].map((l) => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="block py-2 text-sm font-medium text-dtv-dark" onClick={() => setMobileOpen(false)}>{l}</a>
+            <a key={l} href={`#${l.toLowerCase()}`} className="block py-2 text-[15px] font-medium text-dtv-dark" onClick={() => setMobileOpen(false)}>{l}</a>
           ))}
           <div className="flex gap-2 pt-2">
-            <a href="#" className="btn-orange text-sm flex-1 text-center">Get a demo</a>
-            <a href="#" className="btn-outline-orange text-sm flex-1 text-center">Get started free</a>
+            <a href="#" className="btn-orange text-[15px] flex-1 text-center">Get a demo</a>
+            <a href="#" className="btn-outline-orange text-[15px] flex-1 text-center">Get started free</a>
           </div>
         </div>
       )}
