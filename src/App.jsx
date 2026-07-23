@@ -81,27 +81,30 @@ function UtilityBar() {
    ══════════════════════════════════════════════ */
 
 function MegaMenuProducts() {
+  const products = [
+    { name: 'Agentic CRM', desc: 'The AI-first single source of truth.', icon: '🧠', color: 'bg-orange-50' },
+    { name: 'Marketing AI Hub', desc: 'Automate campaigns & lead gen.', icon: '🚀', color: 'bg-blue-50' },
+    { name: 'Sales AI Hub', desc: 'Close deals faster with predictive insights.', icon: '📈', color: 'bg-green-50' },
+    { name: 'Service AI Hub', desc: '24/7 autonomous customer support.', icon: '💬', color: 'bg-purple-50' },
+  ];
   return (
-    <div className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 cursor-default">
-      <div className="max-w-[1200px] mx-auto px-6 py-8">
-        <div className="flex justify-between items-center border-b border-gray-100 pb-4 mb-6">
-           <div>
-             <h3 className="font-bold text-lg text-draken-dark mb-1">The Draken Customer Platform</h3>
-             <p className="text-[13px] text-draken-muted">All of Draken's marketing, sales, and customer service software on one agentic platform.</p>
-           </div>
-           <div className="flex gap-4">
-             <button className="px-5 py-2.5 border border-gray-200 hover:bg-gray-50 rounded-md text-[13px] font-semibold flex items-center gap-2 transition-colors"><span className="text-draken-orange text-lg">✦</span> Free Draken CRM</button>
-             <button className="px-5 py-2.5 border border-gray-200 hover:bg-gray-50 rounded-md text-[13px] font-semibold flex items-center gap-2 transition-colors"><span className="text-draken-orange text-lg">✦</span> Overview of all products</button>
-           </div>
+    <div className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top group-hover:scale-100 scale-95">
+      <div className="max-w-[1000px] mx-auto px-6 py-10 flex gap-12">
+        <div className="w-1/3">
+          <h3 className="font-logo font-bold text-2xl text-draken-dark mb-2">Platform</h3>
+          <p className="text-[14px] text-draken-muted mb-6 leading-relaxed">Everything you need to scale your go-to-market engine natively built with AI.</p>
+          <a href="#" className="inline-flex items-center gap-2 font-bold text-draken-orange hover:text-draken-orangeHover transition-colors">Explore full platform <ArrowRight /></a>
         </div>
-        <div className="grid grid-cols-4 gap-y-8 gap-x-6">
-           {Array.from({length: 11}).map((_,i)=>(
-             <div key={i}>
-                <div className="flex items-center gap-2 mb-1.5"><span className="text-draken-orange text-lg">✦</span> <span className="font-bold text-sm text-draken-dark hover:text-draken-orange cursor-pointer transition-colors">Product Hub {i+1}</span></div>
-                <p className="text-[13px] text-draken-muted mb-2">Marketing automation software and platform tools.</p>
-                <a href="#" className="text-[13px] font-bold text-draken-dark hover:text-draken-orange transition-colors underline decoration-2 underline-offset-4 decoration-draken-dark hover:decoration-draken-orange">Free and premium plans</a>
-             </div>
-           ))}
+        <div className="w-2/3 grid grid-cols-2 gap-6">
+          {products.map((p) => (
+            <div key={p.name} className="flex gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer border border-transparent hover:border-gray-100">
+              <div className={`w-12 h-12 rounded-lg ${p.color} flex items-center justify-center text-2xl shrink-0`}>{p.icon}</div>
+              <div>
+                <h4 className="font-bold text-draken-dark mb-1">{p.name}</h4>
+                <p className="text-[13px] text-draken-muted leading-relaxed">{p.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -109,28 +112,30 @@ function MegaMenuProducts() {
 }
 
 function MegaMenuSolutions() {
+  const solutions = {
+    'By Role': ['Marketing Leaders', 'Sales Directors', 'Customer Success', 'Operations'],
+    'By Industry': ['SaaS & Tech', 'E-commerce', 'Financial Services', 'Healthcare'],
+    'By Need': ['Lead Generation', 'Revenue Operations', 'Customer Retention', 'Workflow Automation']
+  };
   return (
-    <div className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 cursor-default">
-      <div className="max-w-[1200px] mx-auto flex h-[450px]">
-        <div className="w-[260px] bg-[#F8F9FA] py-6 px-4 border-r border-gray-100 flex flex-col gap-1">
-           <div className="bg-white shadow-sm px-4 py-3 rounded-md font-semibold text-sm cursor-pointer flex justify-between items-center text-draken-dark">By Use Case <ChevronRight /></div>
-           <div className="px-4 py-3 text-sm font-medium text-draken-dark hover:bg-gray-100 rounded-md cursor-pointer flex justify-between items-center transition-colors">By Team Size <ChevronRight /></div>
-           <div className="px-4 py-3 text-sm font-medium text-draken-dark hover:bg-gray-100 rounded-md cursor-pointer flex justify-between items-center transition-colors">Why Draken? <ChevronRight /></div>
-        </div>
-        <div className="flex-1 py-8 px-10 grid grid-cols-3 gap-x-12 gap-y-8 overflow-y-auto">
-           {['Marketing', 'Sales', 'Customer Service', 'Content', 'Startups & Small Businesses', 'Artificial Intelligence'].map((cat, i)=>(
-             <div key={i} className={i > 2 ? 'border-t border-gray-100 pt-6' : ''}>
-                <h4 className="font-bold text-[15px] text-draken-dark mb-5">{cat}</h4>
-                <div className="mb-5">
-                  <div className="font-semibold text-sm text-draken-dark mb-1.5 hover:text-draken-orange cursor-pointer transition-colors">Generate leads</div>
-                  <div className="text-[13px] text-draken-muted leading-relaxed">Convert visitors into contacts for your database.</div>
-                </div>
-                <div className="mb-5">
-                  <div className="font-semibold text-sm text-draken-dark mb-1.5 hover:text-draken-orange cursor-pointer transition-colors">Automate marketing</div>
-                  <div className="text-[13px] text-draken-muted leading-relaxed">Create campaigns with automation and AI.</div>
-                </div>
-             </div>
-           ))}
+    <div className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top group-hover:scale-100 scale-95">
+      <div className="max-w-[1000px] mx-auto px-6 py-10">
+        <div className="grid grid-cols-3 gap-12">
+          {Object.entries(solutions).map(([title, items]) => (
+            <div key={title}>
+              <h4 className="font-bold text-sm text-draken-dark uppercase tracking-wider mb-5 pb-3 border-b border-gray-100">{title}</h4>
+              <ul className="space-y-4">
+                {items.map((item) => (
+                  <li key={item}>
+                    <a href="#" className="group flex items-center justify-between text-[14px] font-medium text-draken-muted hover:text-draken-orange transition-all">
+                      {item}
+                      <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-draken-orange"><ArrowRight /></span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -138,29 +143,31 @@ function MegaMenuSolutions() {
 }
 
 function MegaMenuResources() {
+  const resources = [
+    { title: 'Documentation', desc: 'Guides, API refs, and setup.', icon: '📚' },
+    { title: 'Community', desc: 'Connect with 10k+ creators.', icon: '🌐' },
+    { title: 'Blog', desc: 'Latest insights and product news.', icon: '✍️' },
+    { title: 'Draken Academy', desc: 'Free certifications & courses.', icon: '🎓' },
+  ];
   return (
-    <div className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 cursor-default">
-      <div className="max-w-[1200px] mx-auto px-6 py-10">
-        <div className="grid grid-cols-5 gap-8">
-           {['Featured Links', 'Community & Events', 'Education', 'Services', 'Partners'].map((cat, i)=>(
-             <div key={i}>
-                <h4 className="font-bold text-[15px] text-draken-dark mb-5">{cat}</h4>
-                <ul className="space-y-4">
-                  {Array.from({length: 5}).map((_,j)=>(
-                    <li key={j}><a href="#" className="text-[13px] font-medium text-draken-muted hover:text-draken-orange transition-colors">Resource Link {j+1}</a></li>
-                  ))}
-                </ul>
-                {cat === 'Education' && (
-                   <div className="mt-8">
-                     <h4 className="font-bold text-[15px] text-draken-dark mb-5">Tools</h4>
-                     <ul className="space-y-4">
-                        <li><a href="#" className="text-[13px] font-medium text-draken-muted hover:text-draken-orange transition-colors">Website Templates</a></li>
-                        <li><a href="#" className="text-[13px] font-medium text-draken-muted hover:text-draken-orange transition-colors">Developer Tools</a></li>
-                     </ul>
-                   </div>
-                )}
-             </div>
-           ))}
+    <div className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top group-hover:scale-100 scale-95">
+      <div className="max-w-[1000px] mx-auto px-6 py-10 flex gap-12">
+        <div className="w-2/3 grid grid-cols-2 gap-x-12 gap-y-8">
+          {resources.map((r) => (
+            <div key={r.title} className="group cursor-pointer">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-xl">{r.icon}</span>
+                <h4 className="font-bold text-draken-dark group-hover:text-draken-orange transition-colors">{r.title}</h4>
+              </div>
+              <p className="text-[13px] text-draken-muted pl-8">{r.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="w-1/3 bg-gray-50 rounded-2xl p-6 border border-gray-100 relative overflow-hidden">
+           <div className="absolute -top-4 -right-4 text-draken-orange/10 text-9xl">✨</div>
+           <h4 className="font-bold text-draken-dark mb-2 relative z-10">New: Agentic Workflows</h4>
+           <p className="text-[13px] text-draken-muted mb-4 relative z-10 leading-relaxed">Discover how our new AI agents can automate your entire sales pipeline in 5 minutes.</p>
+           <a href="#" className="inline-flex items-center gap-1.5 text-sm font-bold text-draken-orange hover:text-draken-orangeHover transition-colors relative z-10">Read the guide <ArrowRight /></a>
         </div>
       </div>
     </div>
