@@ -182,21 +182,22 @@ function Navbar() {
       <div className={`max-w-[1200px] mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-[88px]'}`}>
         {/* logo and links */}
         <div className={`flex items-center transition-all duration-500 ${scrolled ? 'gap-4' : 'gap-8'}`}>
-          <a href="#" className="flex items-center gap-0.5 overflow-hidden">
-            {/* Clean D Icon with a dot inside */}
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-              <path d="M4 2v20h8c5.523 0 10-4.477 10-10S17.523 2 12 2H4z" fill="#FF4800"/>
-              <circle cx="13" cy="12" r="3.5" fill="white"/>
-            </svg>
-            {/* Text TV that hides on scroll */}
-            <span className={`text-draken-orange font-black text-[28px] leading-none tracking-tighter transition-all duration-500 pt-0.5 ${scrolled ? 'max-w-0 opacity-0' : 'max-w-[120px] opacity-100'}`}>raken</span>
+          <a href="#" className="flex items-center">
+            <span className="text-draken-orange font-sans font-black text-[28px] leading-none tracking-tighter">
+              Draken
+            </span>
           </a>
           {/* links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-stretch h-full">
             {['Products', 'Solutions', 'Pricing', 'Resources'].map((l) => (
-              <a key={l} href={`#${l.toLowerCase()}`} className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-draken-dark hover:text-draken-orange transition-colors rounded-md hover:bg-gray-50">
-                {l} {l !== 'Pricing' && <ChevronDown />}
-              </a>
+              <div key={l} className="group flex items-center h-full">
+                <a href={`#${l.toLowerCase()}`} className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-draken-dark hover:text-draken-orange transition-colors rounded-md group-hover:bg-gray-50 h-[40px]">
+                  {l} {l !== 'Pricing' && <ChevronDown />}
+                </a>
+                {l === 'Products' && <MegaMenuProducts />}
+                {l === 'Solutions' && <MegaMenuSolutions />}
+                {l === 'Resources' && <MegaMenuResources />}
+              </div>
             ))}
           </div>
         </div>
@@ -825,12 +826,10 @@ function Footer() {
 
         {/* bottom */}
         <div className="border-t border-white/10 pt-12 pb-8 flex flex-col items-center gap-6">
-          <div className="flex items-center gap-0.5">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 2v20h8c5.523 0 10-4.477 10-10S17.523 2 12 2H4z" fill="#FF4800"/>
-              <circle cx="13" cy="12" r="3.5" fill="white"/>
-            </svg>
-            <span className="text-white font-black text-2xl tracking-tighter pt-0.5">raken</span>
+          <div className="flex items-center">
+            <span className="text-draken-orange font-sans font-black text-2xl tracking-tighter">
+              Draken
+            </span>
           </div>
           <p className="text-white/60 text-xs">Copyright © 2026 Duta, Inc.</p>
           <div className="flex items-center gap-6 text-white/60 text-xs flex-wrap justify-center">
