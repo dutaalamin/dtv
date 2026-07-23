@@ -11,7 +11,7 @@ export default {
         serif: ['"Source Serif 4"', 'Georgia', 'serif'],
       },
       colors: {
-        dtv: {
+        draken: {
           orange: '#FF4800',
           orangeHover: '#E03E00',
           orangeLight: '#FFF4F0',

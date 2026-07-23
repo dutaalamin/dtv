@@ -17,17 +17,17 @@
 
 @layer components {
   .btn-orange {
-    @apply inline-flex items-center justify-center gap-2 bg-dtv-orange text-white font-semibold 
-           text-sm px-6 py-3 rounded-md hover:bg-dtv-orangeHover transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 bg-draken-orange text-white font-semibold 
+           text-sm px-6 py-3 rounded-md hover:bg-draken-orangeHover transition-colors duration-200;
   }
   .btn-outline-orange {
-    @apply inline-flex items-center justify-center gap-2 bg-white text-dtv-orange font-semibold 
-           text-sm px-6 py-3 rounded-md border-2 border-dtv-orange 
-           hover:bg-dtv-orangeLight transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 bg-white text-draken-orange font-semibold 
+           text-sm px-6 py-3 rounded-md border-2 border-draken-orange 
+           hover:bg-draken-orangeLight transition-colors duration-200;
   }
   .btn-outline-dark {
-    @apply inline-flex items-center justify-center gap-2 bg-white text-dtv-dark font-semibold 
-           text-sm px-6 py-3 rounded-md border border-dtv-dark 
+    @apply inline-flex items-center justify-center gap-2 bg-white text-draken-dark font-semibold 
+           text-sm px-6 py-3 rounded-md border border-draken-dark 
            hover:bg-gray-50 transition-colors duration-200;
   }
 }
