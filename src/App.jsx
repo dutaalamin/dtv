@@ -189,7 +189,7 @@ function Navbar() {
               <circle cx="13" cy="12" r="3.5" fill="white"/>
             </svg>
             {/* Text TV that hides on scroll */}
-            <span className={`text-draken-orange font-black text-[28px] leading-none tracking-tighter transition-all duration-500 pt-0.5 ${scrolled ? 'max-w-0 opacity-0' : 'max-w-[50px] opacity-100'}`}>
+            <span className={`text-draken-orange font-black text-[28px] leading-none tracking-tighter transition-all duration-500 pt-0.5 ${scrolled ? 'max-w-0 opacity-0' : 'max-w-[120px] opacity-100'}`}>
               TV
             </span>
           </a>
@@ -832,7 +832,7 @@ function Footer() {
               <path d="M4 2v20h8c5.523 0 10-4.477 10-10S17.523 2 12 2H4z" fill="#FF4800"/>
               <circle cx="13" cy="12" r="3.5" fill="white"/>
             </svg>
-            <span className="text-white font-black text-2xl tracking-tighter pt-0.5">TV</span>
+            <span className="text-white font-black text-2xl tracking-tighter pt-0.5">raken</span>
           </div>
           <p className="text-white/60 text-xs">Copyright © 2026 Duta, Inc.</p>
           <div className="flex items-center gap-6 text-white/60 text-xs flex-wrap justify-center">
