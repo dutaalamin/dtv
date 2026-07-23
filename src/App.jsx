@@ -182,7 +182,7 @@ function Navbar() {
       <div className={`max-w-[1200px] mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-[88px]'}`}>
         {/* logo and links */}
         <div className={`flex items-center h-full transition-all duration-500 ${scrolled ? 'gap-4' : 'gap-8'}`}>
-          <a href="#" className="flex items-center">
+          <a href="#" className="flex items-center -mt-1.5">
             <span className="text-draken-orange font-logo font-bold text-[30px] tracking-tight">
               Draken
             </span>
