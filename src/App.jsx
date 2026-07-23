@@ -280,11 +280,16 @@ function Navbar() {
             <span className={`text-draken-orange font-black text-[28px] leading-none tracking-tighter transition-all duration-500 pt-0.5 ${scrolled ? 'max-w-0 opacity-0' : 'max-w-[120px] opacity-100'}`}>raken</span>
           </a>
           {/* links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-stretch h-full">
             {['Products', 'Solutions', 'Pricing', 'Resources'].map((l) => (
-              <a key={l} href={`#${l.toLowerCase()}`} className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-draken-dark hover:text-draken-orange transition-colors rounded-md hover:bg-gray-50">
-                {l} {l !== 'Pricing' && <ChevronDown />}
-              </a>
+              <div key={l} className="group flex items-center h-full">
+                <a href={`#${l.toLowerCase()}`} className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-draken-dark hover:text-draken-orange transition-colors rounded-md group-hover:bg-gray-50 h-[40px]">
+                  {l} {l !== 'Pricing' && <ChevronDown />}
+                </a>
+                {l === 'Products' && <MegaMenuProducts />}
+                {l === 'Solutions' && <MegaMenuSolutions />}
+                {l === 'Resources' && <MegaMenuResources />}
+              </div>
             ))}
           </div>
         </div>
