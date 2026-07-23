@@ -181,7 +181,7 @@ function Navbar() {
     <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md border-b-0' : 'shadow-none border-b border-gray-200'}`}>
       <div className={`max-w-[1200px] mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-[88px]'}`}>
         {/* logo and links */}
-        <div className={`flex items-center transition-all duration-500 ${scrolled ? 'gap-4' : 'gap-8'}`}>
+        <div className={`flex items-center h-full transition-all duration-500 ${scrolled ? 'gap-4' : 'gap-8'}`}>
           <a href="#" className="flex items-center">
             <span className="text-draken-orange font-sans font-black text-[28px] leading-none tracking-tighter">
               Draken
