@@ -183,7 +183,7 @@ function Navbar() {
         {/* logo and links */}
         <div className={`flex items-center h-full transition-all duration-500 ${scrolled ? 'gap-4' : 'gap-8'}`}>
           <a href="#" className="flex items-center">
-            <span className="text-draken-orange font-sans font-black text-[28px] leading-none tracking-tighter">
+            <span className="text-draken-orange font-logo font-bold text-[30px] tracking-tight">
               Draken
             </span>
           </a>
@@ -827,7 +827,7 @@ function Footer() {
         {/* bottom */}
         <div className="border-t border-white/10 pt-12 pb-8 flex flex-col items-center gap-6">
           <div className="flex items-center">
-            <span className="text-draken-orange font-sans font-black text-2xl tracking-tighter">
+            <span className="text-draken-orange font-logo font-bold text-[28px] tracking-tight">
               Draken
             </span>
           </div>
